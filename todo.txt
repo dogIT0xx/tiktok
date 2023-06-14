@@ -1,0 +1,17 @@
+1. Setup ide
+  + .prettierrc
+  + .vscode/settings.json
+  + .env.local
+    PORT=3000
+2. Install lib
+  + customsize-cra
+  + babel-plugin-module-resolver
+  + Sass, normalize.css
+  + react-router-dom
+  + classnames
+  + PropTypes
+3. Setup project
+  + Reset css
+  + Fonts embedded, color origin
+  + Folder division
+  + Create repo github
