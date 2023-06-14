@@ -1,0 +1,59 @@
+@import 'normalize.css';
+
+// Font embedded
+@font-face {
+  font-family: ProximaNova;
+  font-weight: 400;
+  src: url('../../assets/fonts/ProximaNova-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: ProximaNova;
+  font-weight: 600;
+  src: url('../../assets/fonts/ProximaNova-semibold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: ProximaNova;
+  font-weight: 700;
+  src: url('../../assets/fonts/ProximaNova-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: Sofiapro;
+  font-weight: 600;
+  src: url('../../assets/fonts/Sofiapro-semibold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: Sofiapro;
+  font-weight: 700;
+  src: url('../../assets/fonts/Sofiapro-bold.woff') format('woff');
+}
+
+// Reset css
+:root {
+  --primary-color: #fe2c55;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+
+  body {
+    font-size: 1.6rem;
+    overflow: hidden scroll;
+  }
+}
+
+button,
+input,
+[tabindex] {
+  outline: none;
+  border: none;
+}
