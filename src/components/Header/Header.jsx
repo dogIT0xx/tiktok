@@ -26,6 +26,7 @@ function Header() {
           className={cx('login-btn')}
           size="size-m"
           customStyle={{
+            width: '100px',
             border: 'none',
             borderRadius: '4px',
             backgroundColor: '#fe2c55',
@@ -34,7 +35,9 @@ function Header() {
         >
           Log in
         </Button>
-        <button className={cx('more-btn')}></button>
+        <button className={cx('more-btn')}>
+          <img src={icons.moreBtn} alt="" />
+        </button>
       </div>
     </header>
   )

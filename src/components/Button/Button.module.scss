@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 36px;
+  padding: 0 16px;
+  border: 1px solid #1618231f;
+  border-radius: 2px;
+  background: #ffffff;
+  color: #161823;
+  cursor: pointer;
+  user-select: none;
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+
+  .tilte {
+    width: 52px;
+    height: 24px;
+    font-family: ProximaNova;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
