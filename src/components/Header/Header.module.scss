@@ -1,0 +1,29 @@
+.container {
+  width: 1528px;
+  height: 60px;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    width: 118px;
+    height: 42px;
+  }
+
+  .actions {
+    width: 274px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    .upload-btn+.login-btn {
+      margin-left: 16px;
+    }
+
+    .more-btn {
+    }
+  }
+}

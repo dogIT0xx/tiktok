@@ -3,6 +3,7 @@
   + .vscode/settings.json
   + .env.local
     PORT=3000
+  + config postCss sorter extension
 2. Install lib
   + customsize-cra
   + babel-plugin-module-resolver
@@ -15,3 +16,8 @@
   + Fonts embedded, color origin
   + Folder division
   + Create repo github
+4. Header component
+  + Logo
+  + Search component
+  + Button component
+  + Search tooltip, more btn tooltip -> tooltip component/ tooltip lib

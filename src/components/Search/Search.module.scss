@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 500px;
+  height: 46px;
+  margin: 0;
+  padding: 12px 16px;
+  border-radius: 92px;
+  background: #1618230f;
+
+  .input {
+    width: 391px;
+    height: 22px;
+    font-family: ProximaNova;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    background: transparent;
+    color: #161823;
+    caret-color: #fe2c55;
+    appearance: textfield;
+  }
+
+  .icon {
+    width: 40px;
+    height: 16px;
+  }
+
+  .spliter {
+    width: 1px;
+    height: 28px;
+    margin: -3px 0;
+    background: #1618231f;
+  }
+
+  .btn {
+    width: 52px;
+    height: 46px;
+    padding: 9px 16px 9px 12px;
+    margin-right: -16px;
+    border-radius: 0 92px 92px 0;
+    background: transparent;
+
+    &-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .btn:hover {
+    cursor: pointer;
+    background-color: #1618230f;
+  }
+}
+
+.container:hover {
+  border: 1px solid #16182333;
+}
