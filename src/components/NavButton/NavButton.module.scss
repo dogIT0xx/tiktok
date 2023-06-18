@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 224px;
+  height: 48px;
+  padding: 8px;
+  background-color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .title {
+    color: #161823;
+    font-family: ProximaNova;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    margin-left: 8px;
+  }
+}
+
+.container:active {
+  .icon {
+    fill: #fe2c55;
+  }
+
+  .title {
+    color: #fe2c55;
+  }
+}

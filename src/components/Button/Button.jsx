@@ -28,7 +28,7 @@ function Button({ to, href, primary, children, className, icon, size, onClick, c
   return (
     <Comp {...props}>
       {icon && <img className={cx('icon')} src={icon} alt=""></img>}
-      <span className={cx('tilte')}>{children}</span>
+      <span className={cx('title')}>{children}</span>
     </Comp>
   )
 }

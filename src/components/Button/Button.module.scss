@@ -11,6 +11,11 @@
   color: #161823;
   cursor: pointer;
   user-select: none;
+  font-family: ProximaNova;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .icon {
@@ -19,12 +24,12 @@
   margin-right: 8px;
 }
 
-.tilte {
+.title {
   min-width: 52px;
   height: 24px;
-  font-family: ProximaNova;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
