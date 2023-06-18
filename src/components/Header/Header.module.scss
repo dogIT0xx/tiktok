@@ -6,10 +6,17 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0px 1px 1px #0000001f;
 
   .logo {
-    width: 118px;
+    width: 300px;
     height: 42px;
+
+    >img {
+      width: 118px;
+      height: 42px;
+      cursor: pointer;
+    }
   }
 
   .actions {
@@ -30,5 +37,31 @@
       background-color: transparent;
       cursor: pointer;
     }
+  }
+}
+
+.more-btn-popover {
+  display: block;
+  width: 224px;
+  height: 186px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: #0000001f 0px 4px 16px;
+  transition: opacity 300ms ease 0s;
+  opacity: 1;
+
+  .setting-list {
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    padding: 8px 0;
+  }
+
+  .setting-item {
+    width: 100%;
+    height: 42px;
+    padding: 10px 8px 10px 16px;
+    justify-content: flex-start;
+    border: none;
   }
 }

@@ -46,6 +46,7 @@
     &-icon {
       width: 24px;
       height: 24px;
+      color: #a6a7ab;
     }
   }
 
@@ -57,4 +58,53 @@
 
 .container:hover {
   border: 1px solid #16182333;
+}
+
+// guess popover
+.guess-popover {
+  width: 500px;
+  max-height: 460px;
+  padding-top: 8px;
+  margin-top: 8px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: #0000001f 0px 2px 12px;
+  overflow: hidden auto;
+  list-style-type: none;
+
+  .guess-list {
+    font-family: ProximaNova;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    color: #161823bf;
+
+    &__title {
+      padding: 5px 12px 3px;
+    }
+  }
+}
+
+.guess-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 9px 16px;
+  cursor: pointer;
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  &__text {
+    padding: 0 12px 0 8px;
+    font-family: ProximaNova;
+    font-size: 16px;
+    line-height: 24px;
+    color: #161823;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }

@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind'
+import Tippy from '@tippyjs/react/headless'
 
 import styles from './Header.module.scss'
 import images from '~/assets/images'
@@ -12,7 +13,9 @@ function Header() {
   return (
     <header className={cx('container')}>
       {/* logo */}
-      <img className={cx('logo')} src={images.logo} alt="" />
+      <div className={cx('logo')}>
+        <img src={images.logo} alt="" />
+      </div>
 
       {/* search */}
       <Search />
@@ -35,9 +38,34 @@ function Header() {
         >
           Log in
         </Button>
-        <button className={cx('more-btn')}>
-          <img src={icons.moreBtn} alt="" />
-        </button>
+        <Tippy
+          visible
+          interactive
+          placement="bottom-start"
+          offset={[25, 8]}
+          render={(attrs) => (
+            <div className={cx('more-btn-popover')} {...attrs}>
+              <ul className={cx('setting-list')}>
+                <Button className={cx('setting-item')} icon={icons.language}>
+                  English
+                </Button>
+                <Button className={cx('setting-item')} icon={icons.circleQuestion}>
+                  Feedback and help
+                </Button>
+                <Button className={cx('setting-item')} icon={icons.keyboard}>
+                  Keybroard shortcuts
+                </Button>
+                <Button className={cx('setting-item')} icon={icons.moon}>
+                  Dark mode
+                </Button>
+              </ul>
+            </div>
+          )}
+        >
+          <button className={cx('more-btn')}>
+            <img src={icons.moreBtn} alt="" />
+          </button>
+        </Tippy>
       </div>
     </header>
   )
