@@ -30,7 +30,7 @@
       margin-left: 16px;
     }
 
-    .more-btn {
+    .more-btn-wrapper {
       width: 20px;
       height: 28px;
       margin-left: 16px;
@@ -38,6 +38,14 @@
       cursor: pointer;
     }
   }
+}
+
+.more-btn {
+  width: 100%;
+  height: 100%;
+  margin-left: 16px;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .more-btn-popover {

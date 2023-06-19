@@ -7,14 +7,14 @@ import styles from './Button.module.scss'
 const cx = classNames.bind(styles)
 
 function Button({ to, href, primary, children, className, icon, size, onClick, customStyle }) {
-  let props = {
+  const props = {
     className: cx('container', size, className),
     onClick
   }
   let Comp = 'button'
 
   if (to) {
-    Comp = 'Link'
+    Comp = Link
     props.to = to
   } else if (href) {
     Comp = 'a'

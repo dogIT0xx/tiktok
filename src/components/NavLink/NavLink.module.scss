@@ -1,0 +1,15 @@
+.container {
+  display: inline-block;
+  margin: 5px 6px 0 0;
+  color: #16182380;
+  font-family: ProximaNova;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container:hover {
+  text-decoration: underline;
+}

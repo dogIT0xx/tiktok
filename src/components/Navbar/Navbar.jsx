@@ -13,24 +13,16 @@ function Navbar() {
     <nav className={cx('container')}>
       <ul className={cx('nav-main')}>
         <li>
-          <NavButton to="en" icon={icons.home}>
-            For You
-          </NavButton>
+          <NavButton icon={icons.home}>For You</NavButton>
         </li>
         <li>
-          <NavButton to="following" icon={icons.userGroup}>
-            Following
-          </NavButton>
+          <NavButton icon={icons.userGroup}>Following</NavButton>
         </li>
         <li>
-          <NavButton href="explore" icon={icons.compass}>
-            Explore
-          </NavButton>
+          <NavButton icon={icons.compass}>Explore</NavButton>
         </li>
         <li>
-          <NavButton href="live" icon={icons.cameraMovie}>
-            LIVE
-          </NavButton>
+          <NavButton icon={icons.cameraMovie}>LIVE</NavButton>
         </li>
       </ul>
       <div className={cx('nav-login')}>

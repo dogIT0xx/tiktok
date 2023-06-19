@@ -38,34 +38,36 @@ function Header() {
         >
           Log in
         </Button>
-        <Tippy
-          visible
-          interactive
-          placement="bottom-start"
-          offset={[25, 8]}
-          render={(attrs) => (
-            <div className={cx('more-btn-popover')} {...attrs}>
-              <ul className={cx('setting-list')}>
-                <Button className={cx('setting-item')} icon={icons.language}>
-                  English
-                </Button>
-                <Button className={cx('setting-item')} icon={icons.circleQuestion}>
-                  Feedback and help
-                </Button>
-                <Button className={cx('setting-item')} icon={icons.keyboard}>
-                  Keybroard shortcuts
-                </Button>
-                <Button className={cx('setting-item')} icon={icons.moon}>
-                  Dark mode
-                </Button>
-              </ul>
-            </div>
-          )}
-        >
-          <button className={cx('more-btn')}>
-            <img src={icons.moreBtn} alt="" />
-          </button>
-        </Tippy>
+        <div className={cx('more-btn-wrapper')}>
+          <Tippy
+            visible
+            interactive
+            placement="bottom-start"
+            offset={[25, 8]}
+            render={(attrs) => (
+              <div className={cx('more-btn-popover')} {...attrs}>
+                <ul className={cx('setting-list')}>
+                  <Button className={cx('setting-item')} icon={icons.language}>
+                    English
+                  </Button>
+                  <Button className={cx('setting-item')} icon={icons.circleQuestion}>
+                    Feedback and help
+                  </Button>
+                  <Button className={cx('setting-item')} icon={icons.keyboard}>
+                    Keybroard shortcuts
+                  </Button>
+                  <Button className={cx('setting-item')} icon={icons.moon}>
+                    Dark mode
+                  </Button>
+                </ul>
+              </div>
+            )}
+          >
+            <button className={cx('more-btn')}>
+              <img src={icons.moreBtn} alt="" />
+            </button>
+          </Tippy>
+        </div>
       </div>
     </header>
   )
