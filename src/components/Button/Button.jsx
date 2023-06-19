@@ -6,7 +6,7 @@ import styles from './Button.module.scss'
 
 const cx = classNames.bind(styles)
 
-function Button({ to, href, primary, children, className, icon, size, onClick, customStyle }) {
+function Button({ to, href, children, className, icon, size, onClick }) {
   const props = {
     className: cx('container', size, className),
     onClick
@@ -21,10 +21,6 @@ function Button({ to, href, primary, children, className, icon, size, onClick, c
     props.href = href
   }
 
-  if (!primary) {
-    props.style = customStyle
-  }
-
   return (
     <Comp {...props}>
       {icon && <img className={cx('icon')} src={icon} alt=""></img>}
@@ -36,13 +32,11 @@ function Button({ to, href, primary, children, className, icon, size, onClick, c
 Button.propTypes = {
   to: PropTypes.string,
   href: PropTypes.string,
-  primary: PropTypes.bool,
   children: PropTypes.string.isRequired,
   classNames: PropTypes.string,
   icon: PropTypes.string,
   size: PropTypes.string,
-  onClick: PropTypes.func,
-  customStyle: PropTypes.object
+  onClick: PropTypes.func
 }
 
 export default Button

@@ -11,7 +11,7 @@ const cx = classNames.bind(styles)
 function Navbar() {
   return (
     <nav className={cx('container')}>
-      <ul className={cx('nav-main')}>
+      <ul className={cx('main')}>
         <li>
           <NavButton icon={icons.home}>For You</NavButton>
         </li>
@@ -25,28 +25,11 @@ function Navbar() {
           <NavButton icon={icons.cameraMovie}>LIVE</NavButton>
         </li>
       </ul>
-      <div className={cx('nav-login')}>
-        <span className={cx('nav-login__tip')}>
+      <div className={cx('login')}>
+        <span className={cx('login__tip')}>
           Log in to follow creators, like videos, and view comments.
         </span>
-        <Button
-          className={cx('nav-login__btn')}
-          customStyle={{
-            width: '208px',
-            height: '48px',
-            borderRadius: '4px',
-            color: '#fe2c55',
-            borderColor: '#fe2c55',
-            padding: '6px 8px',
-            marginTop: '20px',
-            fontFamily: 'SofiaPro',
-            fontSize: '18px',
-            lineHeight: '25px',
-            fontWeight: 600
-          }}
-        >
-          Log in
-        </Button>
+        <Button className={cx('login__btn')}>Log in</Button>
       </div>
     </nav>
   )

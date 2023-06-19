@@ -25,17 +25,7 @@ function Header() {
         <Button className={cx('upload-btn')} size="size-m" icon={icons.plus}>
           Upload
         </Button>
-        <Button
-          className={cx('login-btn')}
-          size="size-m"
-          customStyle={{
-            width: '100px',
-            border: 'none',
-            borderRadius: '4px',
-            backgroundColor: '#fe2c55',
-            color: '#ffffff'
-          }}
-        >
+        <Button className={cx('login-btn')} size="size-m">
           Log in
         </Button>
         <div className={cx('more-btn-wrapper')}>

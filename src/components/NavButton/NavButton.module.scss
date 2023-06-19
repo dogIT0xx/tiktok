@@ -6,7 +6,8 @@
   width: 224px;
   height: 48px;
   padding: 8px;
-  background-color: #fff;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 1);
   cursor: pointer;
   text-decoration: none;
 
@@ -25,12 +26,16 @@
   }
 }
 
+.container:hover {
+  background: rgba(22, 24, 35, .03);
+}
+
 .container:active {
   .icon {
-    fill: #fe2c55;
+    fill: rgba(254, 44, 85, 1);
   }
 
   .title {
-    color: #fe2c55;
+    color: rgba(254, 44, 85, 1);
   }
 }
