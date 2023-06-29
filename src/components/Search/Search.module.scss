@@ -90,27 +90,3 @@
     }
   }
 }
-
-.guess-item {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 9px 16px;
-  cursor: pointer;
-
-  &__icon {
-    width: 16px;
-    height: 16px;
-  }
-
-  &__text {
-    padding: 0 12px 0 8px;
-    font-family: ProximaNova;
-    font-size: 16px;
-    line-height: 24px;
-    color: rgba(22, 24, 35, 1);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-}

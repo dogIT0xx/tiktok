@@ -11,7 +11,8 @@ const icons = {
   compass: require('./compass.svg').default,
   cameraMovie: require('./camera-movie.svg').default,
   home: require('./home.svg').default,
-  userGroup: require('./user-group.svg').default
+  userGroup: require('./user-group.svg').default,
+  verificationBadge: require('./verification-badge.svg').default
 }
 
 export default icons

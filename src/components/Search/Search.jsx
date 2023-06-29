@@ -1,72 +1,65 @@
 import classNames from 'classnames/bind'
 import Tippy from '@tippyjs/react/headless'
+import { useState, useEffect } from 'react'
 
 import styles from './Search.module.scss'
 import icons from '~/assets/icons'
+import { useDebounce } from '~/hooks'
+import GuessItem from '~/components/GuessItem'
+import AccountItem from '~/components/AccountItem'
 
 const cx = classNames.bind(styles)
 
 function Search() {
+  const [searchValue, setSearchValue] = useState('')
+  const [searchResult, setSearchResult] = useState([])
+  const [showResult, setShowResult] = useState(false)
+
+  //  https://tiktok.fullstack.edu.vn/api/users/search?q=hoaa&type=less
+  const debouncedValue = useDebounce(searchValue, 300)
+
+  useEffect(() => {
+    if (!debouncedValue) {
+      setSearchResult([])
+      return
+    } else {
+      fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${debouncedValue}&type=less`)
+        .then((response) => {
+          return response.json()
+        })
+        .then((data) => {
+          setSearchResult(data.data)
+        })
+    }
+  }, [debouncedValue])
+
   return (
     <div className={cx('wrapper')}>
       <Tippy
-        visible
+        visible={showResult && searchResult.length > 0}
         interactive
         placement="bottom"
         render={(attrs) => (
           <div className={cx('guess-popover')} {...attrs}>
             <ul className={cx('guess-list')}>
               <span className={cx('guess-list__title')}>You may like</span>
-              <li className={cx('guess-item')}>
-                <img className={cx('guess-item__icon')} src={icons.fire} alt="" />
-                <span className={cx('guess-item__text')}>Hoang 1</span>
-              </li>
-              <li className={cx('guess-item')}>
-                <img className={cx('guess-item__icon')} src={icons.fire} alt="" />
-                <span className={cx('guess-item__text')}>Hoang 2</span>
-              </li>
-              <li className={cx('guess-item')}>
-                <img className={cx('guess-item__icon')} src={icons.fire} alt="" />
-                <span className={cx('guess-item__text')}>Hoang 3</span>
-              </li>
-              <li className={cx('guess-item')}>
-                <img className={cx('guess-item__icon')} src={icons.fire} alt="" />
-                <span className={cx('guess-item__text')}>Hoang 4</span>
-              </li>
-              <li className={cx('guess-item')}>
-                <img className={cx('guess-item__icon')} src={icons.fire} alt="" />
-                <span className={cx('guess-item__text')}>Hoang 5</span>
-              </li>
-              <li className={cx('guess-item')}>
-                <img className={cx('guess-item__icon')} src={icons.fire} alt="" />
-                <span className={cx('guess-item__text')}>Hoang 6</span>
-              </li>
-              <li className={cx('guess-item')}>
-                <img className={cx('guess-item__icon')} src={icons.fire} alt="" />
-                <span className={cx('guess-item__text')}>Hoang 7</span>
-              </li>
-              <li className={cx('guess-item')}>
-                <img className={cx('guess-item__icon')} src={icons.fire} alt="" />
-                <span className={cx('guess-item__text')}>Hoang 8</span>
-              </li>
-              <li className={cx('guess-item')}>
-                <img className={cx('guess-item__icon')} src={icons.fire} alt="" />
-                <span className={cx('guess-item__text')}>Hoang 9</span>
-              </li>
-              <li className={cx('guess-item')}>
-                <img className={cx('guess-item__icon')} src={icons.fire} alt="" />
-                <span className={cx('guess-item__text')}>Hoang 9</span>
-              </li>
-              <li className={cx('guess-item')}>
-                <img className={cx('guess-item__icon')} src={icons.fire} alt="" />
-                <span className={cx('guess-item__text')}>Hoang 9</span>
-              </li>
+              {/* <GuessItem icon={icons.fire}>Hoang 1</GuessItem> */}
+              {searchResult.map((item) => (
+                <AccountItem key={item.id} data={item}></AccountItem>
+              ))}
             </ul>
           </div>
         )}
       >
         <form className={cx('container')}>
-          <input className={cx('input')} placeholder="Search" />
+          <input
+            className={cx('input')}
+            placeholder="Search"
+            value={searchValue}
+            onChange={(e) => {
+              setSearchValue(e.target.value)
+            }}
+          />
           <img className={cx('icon')} src={icons.circleXmark} alt="" />
           <span className={cx('spliter')}></span>
           <button className={cx('btn')}>
