@@ -1,11 +1,13 @@
 import classNames from 'classnames/bind'
 import Tippy from '@tippyjs/react/headless'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
+import { searchService } from '~/services/searchService.js'
 import styles from './Search.module.scss'
 import icons from '~/assets/icons'
 import { useDebounce } from '~/hooks'
-import GuessItem from '~/components/GuessItem'
+// import GuessItem from '~/components/GuessItem'
 import AccountItem from '~/components/AccountItem'
 
 const cx = classNames.bind(styles)
@@ -23,15 +25,13 @@ function Search() {
       return
     } else {
       setLoading(true)
-      fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${debouncedValue}&type=less`)
-        .then((response) => {
-          return response.json()
-        })
-        .then((data) => {
-          setSearchResult(data.data)
-          setLoading(false)
-          setShowResult(true)
-        })
+      async function fetchApi() {
+        const data = await searchService({ params: { q: debouncedValue, type: 'less' } })
+        setLoading(false)
+        setSearchResult(data)
+        setShowResult(true)
+      }
+      fetchApi()
     }
   }, [debouncedValue])
 
@@ -80,7 +80,6 @@ function Search() {
           <button className={cx('btn')}>
             <img className={cx('btn-icon')} src={icons.searchBtn} alt="" />
           </button>
-          {console.log('render')}
         </form>
       </Tippy>
     </div>
