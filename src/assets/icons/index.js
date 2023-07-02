@@ -12,7 +12,8 @@ const icons = {
   cameraMovie: require('./camera-movie.svg').default,
   home: require('./home.svg').default,
   userGroup: require('./user-group.svg').default,
-  verificationBadge: require('./verification-badge.svg').default
+  verificationBadge: require('./verification-badge.svg').default,
+  spinner: require('./spinner.svg').default
 }
 
 export default icons

@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind'
 import Tippy from '@tippyjs/react/headless'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 import styles from './Search.module.scss'
 import icons from '~/assets/icons'
@@ -14,21 +14,23 @@ function Search() {
   const [searchValue, setSearchValue] = useState('')
   const [searchResult, setSearchResult] = useState([])
   const [showResult, setShowResult] = useState(false)
-
-  //  https://tiktok.fullstack.edu.vn/api/users/search?q=hoaa&type=less
-  const debouncedValue = useDebounce(searchValue, 300)
+  const [loading, setLoading] = useState(false)
+  const debouncedValue = useDebounce(searchValue, 800)
 
   useEffect(() => {
     if (!debouncedValue) {
       setSearchResult([])
       return
     } else {
+      setLoading(true)
       fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${debouncedValue}&type=less`)
         .then((response) => {
           return response.json()
         })
         .then((data) => {
           setSearchResult(data.data)
+          setLoading(false)
+          setShowResult(true)
         })
     }
   }, [debouncedValue])
@@ -39,6 +41,7 @@ function Search() {
         visible={showResult && searchResult.length > 0}
         interactive
         placement="bottom"
+        onClickOutside={() => setShowResult(false)}
         render={(attrs) => (
           <div className={cx('guess-popover')} {...attrs}>
             <ul className={cx('guess-list')}>
@@ -60,11 +63,24 @@ function Search() {
               setSearchValue(e.target.value)
             }}
           />
-          <img className={cx('icon')} src={icons.circleXmark} alt="" />
+          {loading && <img className={cx('icon', 'loading')} src={icons.spinner} alt="" />}
+          {searchValue && !loading && (
+            <img
+              className={cx('icon')}
+              src={icons.circleXmark}
+              alt=""
+              onClick={() => {
+                setSearchValue('')
+                setSearchResult([])
+                setShowResult(false)
+              }}
+            />
+          )}
           <span className={cx('spliter')}></span>
           <button className={cx('btn')}>
             <img className={cx('btn-icon')} src={icons.searchBtn} alt="" />
           </button>
+          {console.log('render')}
         </form>
       </Tippy>
     </div>
